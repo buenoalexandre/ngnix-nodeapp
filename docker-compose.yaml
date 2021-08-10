@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+   web:
+    build: nginx/
+    ports: 
+    - 8080:80
+    volumes: 
+    - ./nginx:/usr/share/nginx/html/
+   nodeapp:
+      build: nodeapp/
+      ports: 
+      - 3000:3000
+      volumes: 
+      - ./nodeapp:/usr/src/app
